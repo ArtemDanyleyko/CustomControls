@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AbsoluteLayout
+    x:Class="CustomControls.UI.HeaderTabComponent"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:CustomControls.UI"
+    HeightRequest="238">
+    <Image
+        AbsoluteLayout.LayoutBounds="0,0,1,1"
+        AbsoluteLayout.LayoutFlags="All"
+        Aspect="Fill" />
+    <Image
+        x:Name="ForegroundHeaderImage"
+        AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize,AutoSize"
+        AbsoluteLayout.LayoutFlags="PositionProportional" />
+    <StackLayout
+        Margin="15,40,55,0"
+        AbsoluteLayout.LayoutBounds="0,0,1,AutoSize"
+        AbsoluteLayout.LayoutFlags="WidthProportional"
+        HorizontalOptions="Fill"
+        Orientation="Horizontal">
+        <Frame
+            x:Name="BalanceFrame"
+            Padding="8"
+            BackgroundColor="White"
+            CornerRadius="16"
+            HasShadow="False">
+            <StackLayout Orientation="Horizontal">
+                <Image Source="{x:Static common:Images.IconBalance}" />
+                <Label
+                    FontSize="16"
+                    LineBreakMode="NoWrap"
+                    Text="200 ₽"
+                    TextColor="Gray" />
+            </StackLayout>
+        </Frame>
+        <controls:SearchEntry x:Name="SearchEntry" />
+    </StackLayout>
+    <Frame
+        x:Name="FilterFrame"
+        Margin="0,40,15,0"
+        Padding="0"
+        AbsoluteLayout.LayoutBounds="1,0,47,72"
+        AbsoluteLayout.LayoutFlags="PositionProportional"
+        BackgroundColor="White"
+        CornerRadius="15">
+        <Image
+            x:Name="FilterImage"
+            BackgroundColor="Transparent"
+            HorizontalOptions="Center"
+            Source="{x:Static common:Images.IconFilter}"
+            VerticalOptions="Center" />
+    </Frame>
+    <Grid
+        x:Name="TabsGrid"
+        Margin="16,0,16,16"
+        AbsoluteLayout.LayoutBounds="0.5,1,1,48"
+        AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+        ColumnDefinitions="*,*"
+        ColumnSpacing="0"
+        RowDefinitions="*">
+        <Button
+            x:Name="LeftTabButton"
+            Grid.Row="0"
+            Grid.Column="0"
+            CornerRadius="16"
+            FontFamily="ArkhipRegular"
+            FontSize="12"
+            TextTransform="None" />
+        <Button
+            x:Name="RightTabButton"
+            Grid.Row="0"
+            Grid.Column="1"
+            CornerRadius="16"
+            FontFamily="ArkhipRegular"
+            FontSize="12"
+            TextTransform="None" />
+    </Grid>
+</AbsoluteLayout>

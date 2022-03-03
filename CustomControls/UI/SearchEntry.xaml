@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Frame
+    x:Class="CustomControls.UI.SearchEntry"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Padding="0"
+    BackgroundColor="{ext:AppColors WhiteTransparent70}"
+    BorderColor="{ext:AppColors Transparent}"
+    CornerRadius="15"
+    HasShadow="False"
+    HeightRequest="32"
+    HorizontalOptions="EndAndExpand"
+    VerticalOptions="Start"
+    WidthRequest="32">
+    <AbsoluteLayout>
+        <ImageButton
+            x:Name="SearchImageButton"
+            Margin="8,0"
+            AbsoluteLayout.LayoutBounds="0,0.5,32,16"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            BackgroundColor="{ext:AppColors Transparent}"
+            Clicked="OnSearchImageButtonClicked"
+            Source="{x:Static common:Images.IconSearch}" />
+        <Label
+            x:Name="HintLabel"
+            Margin="32,0,8,0"
+            AbsoluteLayout.LayoutBounds="0,0.5,AutoSize,AutoSize"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            FontFamily="SourceSansProRegular"
+            FontSize="14"
+            IsVisible="False"
+            LineBreakMode="NoWrap"
+            TextColor="{ext:AppColors Gray,
+                                      Opacity=.5}" />
+        <Entry
+            x:Name="SearchTextEntry"
+            Margin="{x:OnPlatform Android='32,-2,24,0',
+                                  iOS='32,0,24,0'}"
+            AbsoluteLayout.LayoutBounds="{x:OnPlatform Android='0,2,1,AutoSize',
+                                                       iOS='0,0.5,1,AutoSize'}"
+            AbsoluteLayout.LayoutFlags="{x:OnPlatform Android='WidthProportional',
+                                                      iOS='WidthProportional,YProportional'}"
+            FontFamily="SourceSansProRegular"
+            FontSize="14"
+            IsVisible="false"
+            TextColor="{ext:AppColors Gray}"
+            Unfocused="OnUnfocused" />
+        <ImageButton
+            x:Name="CancelImageButton"
+            Margin="8,0"
+            AbsoluteLayout.LayoutBounds="1,0.5,32,16"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            BackgroundColor="{ext:AppColors Transparent}"
+            Clicked="OnCancelImageButtonClicked"
+            IsVisible="false"
+            Source="{x:Static common:Images.IconCancel}" />
+    </AbsoluteLayout>
+</Frame>
